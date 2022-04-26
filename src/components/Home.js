@@ -2,7 +2,6 @@ import React from 'react';
 import { Table } from 'react-bootstrap';
 import "./css/Home.css"
 
-let cropPlan=[];
 
 function Home() {
     return (

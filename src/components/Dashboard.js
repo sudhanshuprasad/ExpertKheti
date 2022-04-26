@@ -1,33 +1,40 @@
 import React from 'react'
 import { Table } from 'react-bootstrap'
 
+let cropPlan = [
+    {
+        "cropName": "rice",
+        "index": "1",
+        "price": "30000",
+    },
+    {
+        "cropName": "wheat",
+        "index": "2",
+        "price": "10000",
+    }
+];
+
 function Dashboard() {
     return (
         <div>
             <Table hover variant="light">
                 <thead>
                     <tr>
-                        <th></th>
-                        <th colSpan={2}>Crop Name</th>
+                        <th>#</th>
+                        <th>Crop Name</th>
                         <th>Estimated Profit</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td colSpan={2}>Wheat</td>
-                        <td>₹50000</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td colSpan={2}>Corn</td>
-                        <td>₹60000</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td colSpan={2}>Rice</td>
-                        <td>₹40000</td>
-                    </tr>
+                    {
+                        cropPlan.map((element) => (
+                            <tr>
+                                <td>{element.index}</td>
+                                <td>{element.cropName}</td>
+                                <td>₹{element.price}</td>
+                            </tr>
+                        ))
+                    }
                 </tbody>
             </Table>
         </div>

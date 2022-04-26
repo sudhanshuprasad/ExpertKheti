@@ -15,6 +15,7 @@ function Topbar() {
           <Navbar.Brand as={NavLink} to='/home' exact>Expert Kheti</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link as={NavLink} to='/home' exact>Home</Nav.Link>
+            <Nav.Link as={NavLink} to='/dashboard' exact>Dashboard</Nav.Link>
             <Nav.Link as={NavLink} to='/about' exact>About</Nav.Link>
             <Nav.Link as={NavLink} to='/contactus' exact>Contact us</Nav.Link>
           </Nav>
