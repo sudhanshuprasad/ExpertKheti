@@ -1,5 +1,6 @@
 import React from 'react'
 import { Table } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom';
 
 let cropPlan = [
     {
@@ -11,10 +12,27 @@ let cropPlan = [
         "cropName": "wheat",
         "index": "2",
         "price": "10000",
+    },
+    {
+        "cropName": "maze",
+        "index": "3",
+        "price": "20000",
+    },
+    {
+        "cropName": "sugarcane",
+        "index": "4",
+        "price": "40000",
+    },
+    {
+        "cropName": "peanuts",
+        "index": "5",
+        "price": "35000",
     }
 ];
 
 function Dashboard() {
+
+    const navigate=useNavigate();
     return (
         <div>
             <Table hover variant="light">
@@ -28,7 +46,7 @@ function Dashboard() {
                 <tbody>
                     {
                         cropPlan.map((element) => (
-                            <tr>
+                            <tr onClick={()=>navigate(`/plan/${element.cropName}`)}>
                                 <td>{element.index}</td>
                                 <td>{element.cropName}</td>
                                 <td>₹{element.price}</td>

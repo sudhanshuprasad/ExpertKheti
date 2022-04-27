@@ -12,12 +12,12 @@ function Topbar() {
     <div>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand as={NavLink} to='/home' exact>Expert Kheti</Navbar.Brand>
+          <Navbar.Brand as={NavLink} to='/home'>Expert Kheti</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link as={NavLink} to='/home' exact>Home</Nav.Link>
-            <Nav.Link as={NavLink} to='/dashboard' exact>Dashboard</Nav.Link>
-            <Nav.Link as={NavLink} to='/about' exact>About</Nav.Link>
-            <Nav.Link as={NavLink} to='/contactus' exact>Contact us</Nav.Link>
+            <Nav.Link as={NavLink} to='/home'>Home</Nav.Link>
+            <Nav.Link as={NavLink} to='/dashboard'>Dashboard</Nav.Link>
+            <Nav.Link as={NavLink} to='/about'>About</Nav.Link>
+            <Nav.Link as={NavLink} to='/contactus'>Contact us</Nav.Link>
           </Nav>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">

@@ -11,6 +11,7 @@ import Contactus from './components/Contactus.js';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import Dashboard from './components/Dashboard.js';
+import Plan from './components/Plan.js';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -44,6 +45,7 @@ function App() {
           <Route path='/login' element={<Login />}></Route>
           <Route path='/contactus' element={<Contactus />}></Route>
           <Route path='/dashboard' element={<Dashboard />}></Route>
+          <Route path='/plan/:cropname' element={<Plan />}></Route>
         </Routes>
       </div>
     </BrowserRouter>
