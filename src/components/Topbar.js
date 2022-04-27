@@ -3,10 +3,11 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import { Link, NavLink } from 'react-router-dom';
+import GoogleLogin from './GoogleLogin';
 
 function Topbar() {
 
-  const [login, setLogin] = useState(true);
+  const [login, setLogin] = useState(false);
 
   return (
     <div>
@@ -25,7 +26,8 @@ function Topbar() {
               Signed in as: <Link to="profile">Sudhanshu</Link>
             </Navbar.Text> :
               <Navbar.Text>
-                <Link to="login">Login</Link>
+                <GoogleLogin/>
+                {/* <Link to="login">Login <GoogleLogin/></Link> */}
               </Navbar.Text>}
           </Navbar.Collapse>
         </Container>

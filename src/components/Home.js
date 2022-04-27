@@ -6,7 +6,8 @@ import "./css/Home.css"
 function Home() {
     return (
         <div >
-            <Table hover variant="light">
+            home
+            {/* <Table hover variant="light">
                 <thead>
                     <tr>
                         <th></th>
@@ -31,7 +32,7 @@ function Home() {
                         <td>₹40000</td>
                     </tr>
                 </tbody>
-            </Table>
+            </Table> */}
         </div>
     )
 }
