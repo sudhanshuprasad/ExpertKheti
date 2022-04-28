@@ -1,5 +1,6 @@
 import React from 'react'
-import { Table } from 'react-bootstrap'
+import "./css/Dashboard.css"
+import { Button, Card, Table } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom';
 
 let cropPlan = [
@@ -18,24 +19,45 @@ let cropPlan = [
         "index": "3",
         "price": "20000",
     },
-    {
-        "cropName": "sugarcane",
-        "index": "4",
-        "price": "40000",
-    },
-    {
-        "cropName": "peanuts",
-        "index": "5",
-        "price": "35000",
-    }
+    // {
+    //     "cropName": "sugarcane",
+    //     "index": "4",
+    //     "price": "40000",
+    // },
+    // {
+    //     "cropName": "peanuts",
+    //     "index": "5",
+    //     "price": "35000",
+    // }
 ];
 
 function Dashboard() {
 
-    const navigate=useNavigate();
+    const navigate = useNavigate();
     return (
-        <div>
-            <Table hover variant="light">
+        <div className='plan mx-2 my-4'>
+            <>
+                {cropPlan.map((element) => (
+                    <Card
+                        onClick={()=>navigate(`/plan/${element.cropName}`)}
+                        bg={"light"}
+                        key={element.index}
+                        text={"dark"}
+                        style={{ width: '18rem' }}
+                        className="mb-2 mx-2"
+                    >
+                        <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+                        <Card.Header>{element.cropName}</Card.Header>
+                        <Card.Body>
+                            <Card.Title>Plan</Card.Title>
+                            <Card.Text>
+                                The Estimated profit will be about ₹{element.price}
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                ))}
+            </>
+            {/* <Table hover variant="light">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -54,7 +76,7 @@ function Dashboard() {
                         ))
                     }
                 </tbody>
-            </Table>
+            </Table> */}
         </div>
     )
 }
