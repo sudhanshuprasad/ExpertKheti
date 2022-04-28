@@ -6,10 +6,10 @@ function Profile() {
     return (
         <div className='mx-5 my-3'>
             <Form>
-                <Form.Group className="mb-3" controlId="formBasicNmae">
+                {/* <Form.Group className="mb-3" controlId="formBasicNmae">
                     <Form.Label>Name</Form.Label>
                     <Form.Control type="text" placeholder="Name" />
-                </Form.Group>
+                </Form.Group> */}
 
                 <Form.Group className="mb-3" controlId="formBasicphone">
                     <Form.Label>Phone Number</Form.Label>

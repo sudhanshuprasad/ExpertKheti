@@ -5,24 +5,26 @@ import Container from 'react-bootstrap/Container';
 import { Link, NavLink } from 'react-router-dom';
 import GoogleLogin from './GoogleLogin';
 import { auth, login, app } from "../firebaseConfig.js"
+import {useAuthState} from "react-firebase-hooks/auth"
+import GoogleLogout from './GoogleLogout';
 
 function Topbar() {
-
-  console.log(app);
+  
   const [userName, setuserName] = useState(null)
-  const [isLoggedin, setisLoggedin] = useState(false)
-  
-  useEffect(() => {
-    if(auth&&auth.currentUser){
-      console.log("hello")
-      setisLoggedin(true)
-      console.log(auth.currentUser.displayName)
-      setuserName(auth.currentUser.displayName)
-    }
+  const [user,loading,error] = useAuthState(auth)
+  const [isLoggedin,setLoggedin] = useState(false)
 
-  }, [])
-  
-  
+  useEffect(() => {
+    console.log(user)
+    if (user == null){
+      setLoggedin(false)
+    }
+    else{
+      setLoggedin(true);
+      setuserName(user.displayName);
+    }
+  },[user]) 
+
   return (
     <div>
       <Navbar bg="dark" variant="dark">
@@ -36,9 +38,12 @@ function Topbar() {
           </Nav>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
-            {isLoggedin ? <Navbar.Text>
+            {isLoggedin ? <><Navbar.Text>
               Signed in as: <Link to="profile">{userName}</Link>
-            </Navbar.Text> :
+            </Navbar.Text>
+            <Navbar.Text>
+            <GoogleLogout/>
+          </Navbar.Text></> :
               <Navbar.Text>
                 <GoogleLogin />
               </Navbar.Text>}

@@ -31,7 +31,7 @@ function Contactus() {
             </Alert>
             <Collapse in={open2}>
                 <div id="example-collapse-text">
-                Email: sudhasnhuprasad.sp@gmail.com
+                Email: roshanbiswanathpatra@gmail.com
                 </div>
             </Collapse><br/>
             
@@ -39,13 +39,11 @@ function Contactus() {
                 onClick={() => setOpen3(!open3)}
                 aria-controls="example-collapse-text"
                 aria-expanded={open4}>
-                Sudhanshu Prasad
+                Debangan
             </Alert>
             <Collapse in={open3}>
                 <div id="example-collapse-text">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                    terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
-                    labore wes anderson cred nesciunt sapiente ea proident.
+                Email: roshanbiswanathpatra@gmail.com
                 </div>
             </Collapse><br/>
             
@@ -53,13 +51,11 @@ function Contactus() {
                 onClick={() => setOpen4(!open4)}
                 aria-controls="example-collapse-text"
                 aria-expanded={open4}>
-                Sudhanshu Prasad
+                Om Tanmaya Pati
             </Alert>
             <Collapse in={open4}>
                 <div id="example-collapse-text">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                    terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
-                    labore wes anderson cred nesciunt sapiente ea proident.
+                Email: roshanbiswanathpatra@gmail.com
                 </div>
             </Collapse><br/>
         </div>

@@ -1,14 +1,10 @@
 import React from 'react'
-import {auth, login } from "../firebaseConfig.js"
+import "./css/GoogleLogin.css"
+import { login } from "../firebaseConfig.js"
 
 function GoogleLogin() {
-
-    function handleLogin(){
-        login();
-    }
-
   return (
-    <button onClick={handleLogin}>GoogleLogin</button>
+    <div onClick={login}>Login with Google</div>
   )
 }
 
