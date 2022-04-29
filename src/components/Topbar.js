@@ -15,7 +15,7 @@ function Topbar() {
   const [isLoggedin,setLoggedin] = useState(false)
 
   useEffect(() => {
-    console.log(user)
+    // console.log(user)
     if (user == null){
       setLoggedin(false)
     }

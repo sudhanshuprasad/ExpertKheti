@@ -2,13 +2,17 @@ import React from 'react'
 import { Accordion, Alert, Col, Container, Row } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 function Plan() {
     const cropName = useParams()
-    console.log(cropName)
+    // console.log(cropName)
     return (
         <div>
             <Alert variant="light">
-                <Alert.Heading><h1 className='text-center'>Plan for {cropName.cropname}</h1></Alert.Heading>
+                <Alert.Heading><h1 className='text-center'>Plan for {capitalizeFirstLetter(cropName.cropname)}</h1></Alert.Heading>
             </Alert>
             <hr />
 
@@ -42,14 +46,21 @@ function Plan() {
                     <Accordion.Header>#2 Procedure</Accordion.Header>
                     <Accordion.Body>
                         <Container>
-                            <Row>
-                                <Col sm={4}>sm=8</Col>
-                                <Col sm={8}>sm=4</Col>
+                        <Row>
+                                <Col sm={4}><strong>Seeds that you will need : </strong></Col>
+                                <Col sm={8}>Hybrid</Col>
                             </Row>
                             <Row>
-                                <Col sm>sm=true</Col>
-                                <Col sm>sm=true</Col>
-                                <Col sm>sm=true</Col>
+                                <Col sm={4}><strong>Fertilisers that you will need : </strong></Col>
+                                <Col sm={8}>Ammonium Nitrate (AN)</Col>
+                            </Row>
+                            <Row>
+                                <Col sm={4}><strong>Pestisides that you will need : </strong></Col>
+                                <Col sm={8}>Plantic Total Plant Care or Similar</Col>
+                            </Row>
+                            <Row>
+                                <Col sm={4}><strong>Water requirment : </strong></Col>
+                                <Col sm={8}>Normal</Col>
                             </Row>
                         </Container>
                     </Accordion.Body>

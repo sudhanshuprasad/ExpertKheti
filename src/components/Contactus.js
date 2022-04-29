@@ -19,7 +19,7 @@ function Contactus() {
             </Alert>
             <Collapse in={open1}>
                 <div id="example-collapse-text">
-                    Email: sudhasnhuprasad.sp@gmail.com
+                    <a href="mailto:sudhanshuprasad.sp@gmail.com">Email: sudhasnhuprasad.sp@gmail.com</a>
                 </div>
             </Collapse><br/>
 
@@ -31,7 +31,7 @@ function Contactus() {
             </Alert>
             <Collapse in={open2}>
                 <div id="example-collapse-text">
-                Email: roshanbiswanathpatra@gmail.com
+                <a href="mailto:sudhanshuprasad.sp@gmail.com">Email: roshanbiswanathpatra@gmail.com</a>
                 </div>
             </Collapse><br/>
             
@@ -43,7 +43,7 @@ function Contactus() {
             </Alert>
             <Collapse in={open3}>
                 <div id="example-collapse-text">
-                Email: roshanbiswanathpatra@gmail.com
+                <a href="mailto:sudhanshuprasad.sp@gmail.com">Email: roshanbiswanathpatra@gmail.com</a>
                 </div>
             </Collapse><br/>
             
@@ -55,7 +55,7 @@ function Contactus() {
             </Alert>
             <Collapse in={open4}>
                 <div id="example-collapse-text">
-                Email: roshanbiswanathpatra@gmail.com
+                <a href="mailto:sudhanshuprasad.sp@gmail.com">Email: roshanbiswanathpatra@gmail.com</a>
                 </div>
             </Collapse><br/>
         </div>
