@@ -29,7 +29,7 @@ function Topbar() {
     <div>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand as={NavLink} to='/home'>Expert Kheti</Navbar.Brand>
+          <Navbar.Brand as={NavLink} to='/'>Expert Kheti</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link as={NavLink} to='/home'>Home</Nav.Link>
             <Nav.Link as={NavLink} to='/dashboard'>Dashboard</Nav.Link>
