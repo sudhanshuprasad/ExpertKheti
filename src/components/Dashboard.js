@@ -1,51 +1,54 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./css/Dashboard.css"
 import { collection, getDocs, getDocsFromCache, getFirestore } from "firebase/firestore"
-import { getDatabase, onValue, ref } from "firebase/database";
+import { Database, getDatabase, onValue, ref } from "firebase/database";
 import PlanPrefab from "./PlanPrefab.js"
 import { useNavigate } from 'react-router-dom';
+import { app, getData } from "../firebaseConfig.js"
+import { useObject } from "react-firebase-hooks/database"
 
+const host = `https://expertkheti-default-rtdb.asia-southeast1.firebasedatabase.app`;
 
-const plans = {
-    "p21": [
-        "c1",
-        "c8",
-        "c17"
-    ],
-    "p22": [
-        "c1",
-        "c8",
-        "c22"
-    ],
-    "p23": [
-        "c1",
-        "c8",
-        "c28"
-    ]
-}
-
-const database = getFirestore();
-const collectionRef = collection(database, "plans");
-
-console.log(collectionRef)
-getDocs(collectionRef)
-    .then((snapshot) => {
-        console.log(snapshot.docs)
-    })
 
 function Dashboard() {
 
-    const plansarr = Object.entries(plans);
-    // console.log(plansarr)
+    const [plans, setPlans] = useState([])
 
-    const navigate = useNavigate();
+    let url = `${host}/plans.json`;
+
+    useEffect(()=>{
+
+        fetch(url)
+        .then(response => {
+            return response.json()
+        })
+        .then(data => {
+            setPlans(data);
+        });
+    },[])
+    
+    // const plansarr = Object.entries(plans);
+
+    let plansarr=[];
+    for (let index = 0; index < 10; index++) {
+        let plstr=`plans.p${index}`;
+        plansarr.push(Object.entries(plstr))
+    }
+    plansarr.pop();
+
+    plansarr.push(Object.entries(plans))
+    // console.log(plansarr)
+    
+    // const navigate = useNavigate()
     return (
         <>
-            {plansarr.map((element) => (
+            <PlanPrefab key={""} crop={""} />
+            {/* {plansarr.map((element) => (
                 <>
+                    {console.log(element[1])}
                     <PlanPrefab key={element[1]} crop={element[1]} />
                 </>
-            ))}
+            ))} */}
         </>
     )
 }
